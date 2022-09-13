@@ -15,7 +15,7 @@
     <!-- Camera link -->
     <link name="${prefix}D435_camera">
         <visual>
-            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <origin rpy="${pi/2} 0 ${pi/2}" xyz="0 0 0"/>
             <geometry>
                 <mesh filename="package://realsense_gazebo_plugin/models/realsense_camera/meshes/realsense_d435.stl"/>
             </geometry>
@@ -114,7 +114,7 @@
             </image>
             <clip>
                 <near>0.1</near>
-                <far>100</far>
+                <far>7</far> <!-- to mimic depth cam view -->
             </clip>
             <noise>
                 <type>gaussian</type>
@@ -124,7 +124,7 @@
             </camera>
             <always_on>1</always_on>
             <update_rate>60</update_rate>
-            <visualize>0</visualize>
+            <visualize>1</visualize>
         </sensor>
         <sensor name="ired1" type="camera">
             <pose frame="">0 -0.06 0.004 0 0 0</pose>
@@ -182,7 +182,7 @@
             </image>
             <clip>
                     <near>0.1</near>
-                    <far>100</far>
+                    <far>7</far>
             </clip>
             <noise>
                     <type>gaussian</type>

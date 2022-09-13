@@ -3,7 +3,7 @@
         name="robot_description"
         command="$(find xacro)/xacro '$(find realsense_gazebo_plugin)/urdf/D435_simulation.xacro'"
     />
-    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <include file="$(find gazebo_ros)/launch/shapes_world.launch">
     </include>
     <node
         name="spawn_model"
