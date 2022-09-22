@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <!--Develped by Daniel Ordonez 22.05.2018 - daniels.ordonez@gmail.com
     INFORMATION:
-        This xacro file a URDF representation of the intel real sense RS200 with the
+        This xacro file a URDF representation of the intel real sense D435 with the
         virtual links representing the position of:
             * The RGB color camera
             * Infrared 1 camera
@@ -84,7 +84,8 @@
     <!-- Load plugin to the model ("robot" in urdf format)-->
     <gazebo>
         <plugin name="${prefix}D435" filename="librealsense_gazebo_plugin.so"/>
-        <!--<pose frame="">0 0 0.015 0 0 0</pose>-->
+        <!-- TODO add camera tf frame to "boreas/camera/left/color" for gazebo_ros_realsense -->
+        <!-- <pose frame="">0 0 0.015 0 0 0</pose> -->
     </gazebo>
 
     <!-- Load parameters to model's main link-->

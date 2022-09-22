@@ -2,7 +2,7 @@
 
 ## _**Important note**_
 
-**This branch only supports ROS Melodic with Gazebo 9.**
+**This branch supports ROS Noetic with Gazebo 11.**
 
 **To use this plugin with ROS Kinetic and Gazebo 7 you should use the [`kinetic-devel` branch](https://github.com/SyrianSpock/realsense_gazebo_plugin/tree/kinetic-devel).**
 
