@@ -44,6 +44,7 @@ namespace gazebo
     protected: ros::NodeHandle* rosnode_;
     private: image_transport::ImageTransport* itnode_;
     protected: image_transport::CameraPublisher color_pub_, ir1_pub_, ir2_pub_, depth_pub_;
+    private: std::string prefix_;
 
     /// \brief ROS image messages
     protected: sensor_msgs::Image image_msg_, depth_msg_;

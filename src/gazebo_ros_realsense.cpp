@@ -32,7 +32,9 @@ void GazeboRosRealsense::Load(physics::ModelPtr _model, sdf::ElementPtr _sdf)
   }
   ROS_INFO("Realsense Gazebo ROS plugin loading.");
 
-  RealSensePlugin::Load(_model, _sdf);
+  this->prefix_ = this->GetHandle();
+
+  RealSensePlugin::Load(_model, _sdf, this->prefix_);
 
   this->rosnode_ = new ros::NodeHandle(this->GetHandle());
 
@@ -63,7 +65,7 @@ void GazeboRosRealsense::OnNewFrame(const rendering::CameraPtr cam,
   const auto image_pub = camera_publishers.at(camera_id);
 
   // copy data into image
-  this->image_msg_.header.frame_id = "boreas/camera/left/color";  //camera_id;
+  this->image_msg_.header.frame_id = this->prefix_ + camera_id;
   this->image_msg_.header.stamp.sec = current_time.sec;
   this->image_msg_.header.stamp.nsec = current_time.nsec;
 
@@ -101,7 +103,7 @@ void GazeboRosRealsense::OnNewDepthFrame()
   RealSensePlugin::OnNewDepthFrame();
 
   // copy data into image
-  this->depth_msg_.header.frame_id = "boreas/camera/left/color";  //COLOR_CAMERA_NAME;
+  this->depth_msg_.header.frame_id = this->prefix_ + COLOR_CAMERA_NAME;
   this->depth_msg_.header.stamp.sec = current_time.sec;
   this->depth_msg_.header.stamp.nsec = current_time.nsec;
 
