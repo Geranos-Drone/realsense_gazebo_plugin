@@ -183,7 +183,7 @@
                     <height>480</height>
             </image>
             <clip>
-                    <near>0.1</near>
+                    <near>0.5</near>  to remove props from detecting
                     <far>7</far>
             </clip>
             <noise>
